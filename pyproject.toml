@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+[project]
+name = "mplume"
+version = "0.1.0"
+description = "Publication-ready scientific styles for Matplotlib"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "NaNIsaac"}]
+dependencies = ["matplotlib>=3.8"]
+[project.optional-dependencies]
+test = ["pytest>=8", "build>=1.2"]
+[project.urls]
+Repository = "https://github.com/NaNIsaac/mplume"
+[tool.hatch.build.targets.wheel]
+packages = ["src/mplume"]
