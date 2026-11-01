@@ -1,20 +1,47 @@
 # mplume
 
-Publication-ready scientific styles for Matplotlib.
+Publication-ready scientific styles and figure composition for Matplotlib.
 
-Version 0.1.0: `box` and `house` styles, `paper`/`slide`/`poster` contexts, optional figure sizing and panel labels.
+Traditional scientific graphs with inward major/minor ticks, closed frames,
+grid-free presentation, paper/slide/poster typography, and helpers for
+zoom insets and vertically stacked curves.
 
-```python
-import matplotlib.pyplot as plt
-import mplume as mp
+## Install
 
-with mp.style('box', 'paper'):
-    fig, ax = mp.figure('single')
-    ax.plot([1, 2, 3], [2, 1, 3])
-    mp.panel_label(ax, 'a')
-    fig.savefig('figure.pdf')
-```
+pip install mplume
 
-`pip install mplume` will be supported after the first PyPI release. Source installation: `pip install git+https://github.com/NaNIsaac/mplume.git`.
+The new zoom and stack functions are available in version 0.2.0 source.
+Until that version reaches PyPI, install the development branch from GitHub.
 
-See the source for the complete 0.1.0 API. Not affiliated with OriginLab.
+## Quick start
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import mplume as mp
+
+    x = np.linspace(-3, 3, 600)
+    y = np.exp(-x*x) + 0.08*np.exp(-60*(x-0.4)**2)
+    with mp.style("box", "paper"):
+        fig, ax = mp.figure("single")
+        ax.plot(x, y)
+        mp.zoom(ax, xlim=(0.1, 0.8), ylim=(0.6, 1.1))
+        fig.savefig("figure.pdf")
+
+## Core API
+
+- mp.use("box", "paper") applies rcParams globally.
+- with mp.style("box", "paper") temporarily sets plotting defaults.
+- box is a classic four-sided scientific frame with inward major/minor ticks.
+- house is a lighter two-sided style.
+- paper, slide, poster select typography scale.
+- mp.figure("single") and mp.subplots("double", ncols=2) select figure width.
+- mp.panel_label(ax, "a") labels an axes panel.
+- mp.zoom(ax, xlim, ylim) creates a linked zoom inset.
+- mp.stack(ax, x, ys, spacing="auto") adds display-only vertical offsets.
+
+The zoom helper copies only ordinary data-coordinate lines; stack never
+mutates its input arrays. See docs/composition.md for limitations and
+examples/scientific.py for a runnable synthetic-data example.
+
+mplume intentionally does not wrap plotting calls or replace plt.subplots.
+Not affiliated with OriginLab. License: MIT.
