@@ -10,8 +10,7 @@ zoom insets and vertically stacked curves.
 
 pip install mplume
 
-The new zoom and stack functions are available in version 0.2.0 source.
-Until that version reaches PyPI, install the development branch from GitHub.
+Version 0.2.0 is available on PyPI and includes `zoom` and `stack`.
 
 ## Quick start
 
@@ -38,6 +37,8 @@ Until that version reaches PyPI, install the development branch from GitHub.
 - mp.panel_label(ax, "a") labels an axes panel.
 - mp.zoom(ax, xlim, ylim) creates a linked zoom inset.
 - mp.stack(ax, x, ys, spacing="auto") adds display-only vertical offsets.
+
+See the [reproducible figure gallery](docs/gallery.md) for zoom, stacked traces and two-panel figures.
 
 The zoom helper copies only ordinary data-coordinate lines; stack never
 mutates its input arrays. See docs/composition.md for limitations and
