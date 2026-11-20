@@ -40,9 +40,18 @@ Version 0.2.0 is available on PyPI and includes `zoom` and `stack`.
 
 See the [reproducible figure gallery](docs/gallery.md) for zoom, stacked traces and two-panel figures.
 
+## Documentation
+
+- [Figure gallery](docs/gallery.md) — zoom, stacked traces and two-panel figures, each with its script
+- [Composition notes](docs/composition.md) — what the zoom helper copies and where stack offsets live, with the limitations
+- [examples/scientific.py](examples/scientific.py) — a runnable synthetic-data example
+
 The zoom helper copies only ordinary data-coordinate lines; stack never
-mutates its input arrays. See docs/composition.md for limitations and
-examples/scientific.py for a runnable synthetic-data example.
+mutates its input arrays.
 
 mplume intentionally does not wrap plotting calls or replace plt.subplots.
-Not affiliated with OriginLab. License: MIT.
+Not affiliated with OriginLab.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
