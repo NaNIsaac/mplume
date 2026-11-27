@@ -44,6 +44,14 @@ CONTEXTS = {
               "ytick.labelsize": 11, "legend.fontsize": 11, "lines.linewidth": 2.0},
     "poster": {"font.size": 18, "axes.labelsize": 18, "xtick.labelsize": 15,
                "ytick.labelsize": 15, "legend.fontsize": 15, "lines.linewidth": 2.5},
+    "a0": {"font.size": 26, "axes.labelsize": 26, "xtick.labelsize": 23,
+           "ytick.labelsize": 23, "legend.fontsize": 23, "lines.linewidth": 2.5,
+           "lines.markersize": 11, "axes.linewidth": 1.6,
+           "xtick.major.size": 11, "ytick.major.size": 11,
+           "xtick.minor.size": 5.5, "ytick.minor.size": 5.5,
+           "xtick.major.width": 1.6, "ytick.major.width": 1.6,
+           "xtick.minor.width": 1.1, "ytick.minor.width": 1.1,
+           "xtick.major.pad": 8, "ytick.major.pad": 8},
 }
 WIDTHS = {"single": 3.5, "double": 7.2}
 
