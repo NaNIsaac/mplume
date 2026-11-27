@@ -12,6 +12,19 @@ def test_context_restores():
         assert mpl.rcParams["xtick.minor.visible"]
     assert mpl.rcParams["font.size"] == before
 
+def test_a0_context_overrides_variant_ticks():
+    with mp.style("box", "a0"):
+        assert mpl.rcParams["font.size"] == 26
+        assert mpl.rcParams["xtick.labelsize"] == 23
+        assert mpl.rcParams["xtick.major.size"] == 11
+        assert mpl.rcParams["ytick.minor.width"] == 1.1
+        assert mpl.rcParams["xtick.direction"] == "in"
+        assert mpl.rcParams["ytick.direction"] == "in"
+        assert mpl.rcParams["xtick.top"]
+    with mp.style("house", "a0"):
+        assert mpl.rcParams["xtick.major.size"] == 11
+        assert not mpl.rcParams["axes.spines.top"]
+
 def test_invalid_style():
     with pytest.raises(ValueError):
         mp.use("invalid")

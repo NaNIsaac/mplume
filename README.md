@@ -32,7 +32,7 @@ Version 0.2.0 is available on PyPI and includes `zoom` and `stack`.
 - with mp.style("box", "paper") temporarily sets plotting defaults.
 - box is a classic four-sided scientific frame with inward major/minor ticks.
 - house is a lighter two-sided style.
-- paper, slide, poster select typography scale.
+- paper, slide, poster, a0 select typography scale; a0 is for figures drawn at print size on an A0 poster.
 - mp.figure("single") and mp.subplots("double", ncols=2) select figure width.
 - mp.panel_label(ax, "a") labels an axes panel.
 - mp.zoom(ax, xlim, ylim) creates a linked zoom inset.
